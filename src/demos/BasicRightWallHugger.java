@@ -14,16 +14,13 @@ public class BasicRightWallHugger extends IRobotAdapter {
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("Try event listner, rev Monday 2030");
+		System.out.println("Try event listner, revn Monday 2030");
 		IRobotInterface base = new SimpleIRobot();
 		BasicRightWallHugger rob = new BasicRightWallHugger(base);
 		rob.setup();
 		while(rob.loop()){}
-		rob.shutDown();
-		
+		rob.shutDown();	
 	}
-
-	
 	
 	private void setup() throws Exception {
 		//SETUP CODE GOES HERE!!!!!
@@ -33,11 +30,12 @@ public class BasicRightWallHugger extends IRobotAdapter {
 		//LOOP CODE GOES HERE!!!!!
 		readSensors(100);
 		
-		driveDirect(200, 170);
+		driveDirect(400, 270);
 		
 		if(isBumpRight()){
-			driveDirect(-200, 200);
+			driveDirect(-200, -200);
 			sleep(100);
+			
 		}
 		
 		return true;

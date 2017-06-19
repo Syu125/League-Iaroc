@@ -27,44 +27,46 @@ public class LightSensorDemo extends IRobotAdapter {
 	}
 	
 	private boolean loop() throws Exception{
-		readSensors(100);//<--gotta read them sensors
+		readSensors(100);
 		
 		//getLightBumps() returns an array of length 6 (elements 0 - 5)
 		//element 0 is the far left light sensor
 		//element 5 is the far right light sensor
-		//elements 1-4 are the sensors inbetween from left to right
+		//elements 1-4 are the sensors in between from left to right
+		
 		int[] lightBumpReadings = getLightBumps();
 		
 		//if the sensors don't detect anything, they return 0
 		//otherwise they return some positive integer
 		//the higher the integer the closer the object
 	
-		if(lightBumpReadings[0] > 0){
-			driveDirect(200, -200);
-			sleep(500);
-			driveDirect(0, 0);
-		}else if(lightBumpReadings[1] > 0){
-			driveDirect(200, -200);
-			sleep(500);
-			driveDirect(0, 0);
-		}else if(lightBumpReadings[2] > 0){
-			driveDirect(-200, -200);
-			sleep(500);
-			driveDirect(0, 0);
-		}else if(lightBumpReadings[3] > 0){
-			driveDirect(-200, -200);
+		driveDirect(500,500);
+		if(lightBumpReadings[5] > 0){
+			driveDirect(130, 100);
 			sleep(500);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[4] > 0){
-			driveDirect(-200, 200);
+			driveDirect(160, 100);
 			sleep(500);
 			driveDirect(0, 0);
-		}else if(lightBumpReadings[5] > 0){
-			driveDirect(-200, 200);
+		}else if(lightBumpReadings[3] > 0){
+			driveDirect(180, 100);
+			sleep(500);
+			driveDirect(0, 0);
+		}else if(lightBumpReadings[2] > 0){
+			driveDirect(100, 180);
+			sleep(500);
+			driveDirect(0, 0);
+		}else if(lightBumpReadings[1] > 0){
+			driveDirect(100, 160);
+			sleep(500);
+			driveDirect(0, 0);
+		}else if(lightBumpReadings[0] > 0){
+			driveDirect(10, 130);
 			sleep(500);
 			driveDirect(0, 0);
 		}
-		
+
 		return true;
 	}
 	

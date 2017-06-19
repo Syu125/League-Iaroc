@@ -29,7 +29,7 @@ public class MoveAndStopDemo extends IRobotAdapter {
 		//driveDirect moves the robot
 		//the first parameter is the left wheel speed
 		//the second parameter is the right wheel speed
-		driveDirect(-500, 500);
+		driveDirect(500, 500);
 		
 		//sleep(int) pauses the program for the indicated amount of time
 		//time is in milliseconds (1000ms = 1s)
