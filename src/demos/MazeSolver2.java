@@ -6,17 +6,17 @@ import org.jointheleague.ecolban.rpirobot.IRobotAdapter;
 import org.jointheleague.ecolban.rpirobot.IRobotInterface;
 import org.jointheleague.ecolban.rpirobot.SimpleIRobot;
 
-public class BasicRightWallHugger extends IRobotAdapter {
+public class MazeSolver2 extends IRobotAdapter {
 	//Sonar sonar = new Sonar();
 	
-	public BasicRightWallHugger(IRobotInterface iRobot) {
+	public MazeSolver2(IRobotInterface iRobot) {
 		super(iRobot);
 	}
 
 	public static void main(String[] args) throws Exception {
 		System.out.println("Try event listner, revn Monday 2030");
 		IRobotInterface base = new SimpleIRobot();
-		BasicRightWallHugger rob = new BasicRightWallHugger(base);
+		MazeSolver2 rob = new MazeSolver2(base);
 		rob.setup();
 		while(rob.loop()){}
 		rob.shutDown();	
@@ -29,25 +29,50 @@ public class BasicRightWallHugger extends IRobotAdapter {
 	private boolean loop() throws Exception{
 		//LOOP CODE GOES HERE!!!!!
 		readSensors(100);
-		//int[] lightBumpReadings = getLightBumps();
-		driveDirect(270, 160);
+		int[] lightBumpReadings = getLightBumps();
+		driveDirect(300, 300);
 		//driveDirect(500,350);
-		if(isBumpRight()){
-			driveDirect(-230, 270);
-			sleep(200);
+		
+		if(lightBumpReadings[0]>0){
+			driveDirect(175,100);
+			sleep(1000);
 			
 		}
-		if(isBumpRight( ) && isBumpLeft()){
-			driveDirect(-250,-250);
-			sleep(500);
-			driveDirect(10,80);
+		if(lightBumpReadings[1]>0){
+			driveDirect(150,100);
+			sleep(1000);
+		}
+		if(lightBumpReadings[2]>0){
+			driveDirect(125,100);
+			sleep(1000);
+		}
+		if(lightBumpReadings[3]>0){
+			driveDirect(100,125);
+			sleep(1000);
+		}
+		if(lightBumpReadings[4]>0){
+			driveDirect(100,150);
+			sleep(1000);
+		}
+		if(lightBumpReadings[5]>0){
+			driveDirect(100,175);
 			sleep(1000);
 		}
 		if(isBumpLeft()){
 			  driveDirect(-100,-100);
 			  sleep(500);
-			  driveDirect(-300,300);
+			  driveDirect(300,-300);
 			  sleep(200);
+		}
+		if(lightBumpReadings[2]>0 && lightBumpReadings[3]>0){
+			driveDirect(0,500);
+			sleep(750);
+			if(lightBumpReadings[2]>0 && lightBumpReadings[3]>0){
+				driveDirect(0,500);
+				sleep(1500);
+			}else{
+				driveDirect(300,300);
+			}
 		}
 		
 		return true;

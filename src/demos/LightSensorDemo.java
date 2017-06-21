@@ -7,7 +7,7 @@ import org.jointheleague.ecolban.rpirobot.IRobotInterface;
 import org.jointheleague.ecolban.rpirobot.SimpleIRobot;
 
 public class LightSensorDemo extends IRobotAdapter {
-	Sonar sonar = new Sonar();
+	//Sonar sonar = new Sonar();
 	
 	public LightSensorDemo(IRobotInterface iRobot) {
 		super(iRobot);
@@ -40,15 +40,15 @@ public class LightSensorDemo extends IRobotAdapter {
 		//otherwise they return some positive integer
 		//the higher the integer the closer the object
 	
-		driveDirect(500,500);
-		if(lightBumpReadings[3]>0){
+		driveDirect(600,600);
+		/*if(lightBumpReadings[3]>0){
 			driveDirect(0,0);
 			sleep(1000);
 			driveDirect(-300,-300);
 			sleep(1000);
 			driveDirect(0,500);
 			sleep(1500);
-			driveDirect(350,30);
+			driveDirect(600,600);
 		}else if(lightBumpReadings[2]>0){
 			driveDirect(0,0);
 			sleep(1000);
@@ -56,31 +56,43 @@ public class LightSensorDemo extends IRobotAdapter {
 			sleep(1000);
 			driveDirect(0,500);
 			sleep(1500);
-			driveDirect(500,500);
+			driveDirect(600,600);
 		}
-	
+	*/
 		if(lightBumpReadings[0] > 0){
-			driveDirect(130, 100);
+			driveDirect(-300,-300);
+			sleep(1000);
+			driveDirect(300, 20);
 			sleep(500);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[1] > 0){
-			driveDirect(160, 100);
+			driveDirect(-300,-300);
+			sleep(1000);
+			driveDirect(360, 20);
 			sleep(500);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[2] > 0){
-			driveDirect(180, 100);
+			driveDirect(-300,-300);
+			sleep(1000);
+			driveDirect(400, 20);
 			sleep(500);
 			driveDirect(0, 0);
 	}else if(lightBumpReadings[3] > 0){
-			driveDirect(100, 180);
+		driveDirect(-300,-300);
+		sleep(1000);
+			driveDirect(20, 400);
 			sleep(500);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[4] > 0){
-			driveDirect(100, 160);
+			driveDirect(-300,-300);
+			sleep(1000);
+			driveDirect(20, 360);
 			sleep(500);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[5] > 0){
-			driveDirect(10, 130);
+			driveDirect(-300,-300);
+			sleep(1000);
+			driveDirect(20, 300);
 			sleep(500);
 			driveDirect(0, 0);
 		}
