@@ -8,7 +8,7 @@ import org.jointheleague.ecolban.rpirobot.SimpleIRobot;
 
 public class BumpSensorDemo extends IRobotAdapter {
 	Sonar sonar = new Sonar();
-	
+	Camera camera;
 	public BumpSensorDemo(IRobotInterface iRobot) {
 		super(iRobot);
 	}
@@ -23,7 +23,7 @@ public class BumpSensorDemo extends IRobotAdapter {
 	}
 
 	private void setup() throws Exception {
-
+		 camera=new Camera(100,100);
 	}
 	
 	private boolean loop() throws Exception{
@@ -31,7 +31,10 @@ public class BumpSensorDemo extends IRobotAdapter {
 		//this must be called at the top of loop if you are using the sensors
 		
 		driveDirect(200, 200);
+		camera.takeRGBPicture();
+		double redNumber=camera.getRedPercentage(80,false);
 		
+		double greenNumber=camera.getGreenPercentage(80, false);
 		//isBumpRight() and isBumpLeft() return true if they have been bumped
 		//since the last call to readSensors
 		//there is not an isBumpCenter() method so you have to check left and right

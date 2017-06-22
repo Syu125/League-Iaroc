@@ -35,41 +35,42 @@ public class MazeSolver2 extends IRobotAdapter {
 		
 		if(lightBumpReadings[0]>0){
 			driveDirect(175,100);
-			sleep(1000);
+			sleep(300);
 			
 		}
 		if(lightBumpReadings[1]>0){
 			driveDirect(150,100);
-			sleep(1000);
+			sleep(300);
 		}
 		if(lightBumpReadings[2]>0){
 			driveDirect(125,100);
-			sleep(1000);
+			sleep(300);
 		}
 		if(lightBumpReadings[3]>0){
 			driveDirect(100,125);
-			sleep(1000);
+			sleep(300);
 		}
 		if(lightBumpReadings[4]>0){
 			driveDirect(100,150);
-			sleep(1000);
+			sleep(300);
 		}
 		if(lightBumpReadings[5]>0){
 			driveDirect(100,175);
-			sleep(1000);
+			sleep(300);
 		}
-		if(isBumpLeft()){
-			  driveDirect(-100,-100);
-			  sleep(500);
-			  driveDirect(300,-300);
-			  sleep(200);
-		}
+		
 		if(lightBumpReadings[2]>0 && lightBumpReadings[3]>0){
 			driveDirect(0,500);
 			sleep(750);
 			if(lightBumpReadings[2]>0 && lightBumpReadings[3]>0){
 				driveDirect(0,500);
 				sleep(1500);
+				if(lightBumpReadings[2]>0 && lightBumpReadings[3]>0){
+					driveDirect(0,500);
+					sleep(750);
+				}else{
+					driveDirect(300,300);
+				}
 			}else{
 				driveDirect(300,300);
 			}

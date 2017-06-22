@@ -40,7 +40,7 @@ public class LightSensorDemo extends IRobotAdapter {
 		//otherwise they return some positive integer
 		//the higher the integer the closer the object
 	
-		driveDirect(600,600);
+		driveDirect(90000,90000);
 		/*if(lightBumpReadings[3]>0){
 			driveDirect(0,0);
 			sleep(1000);
@@ -48,7 +48,7 @@ public class LightSensorDemo extends IRobotAdapter {
 			sleep(1000);
 			driveDirect(0,500);
 			sleep(1500);
-			driveDirect(600,600);
+			driveDirect(1000,1000);
 		}else if(lightBumpReadings[2]>0){
 			driveDirect(0,0);
 			sleep(1000);
@@ -56,47 +56,48 @@ public class LightSensorDemo extends IRobotAdapter {
 			sleep(1000);
 			driveDirect(0,500);
 			sleep(1500);
-			driveDirect(600,600);
+			driveDirect(1000,1000);
 		}
-	*/
+		*/
+	
 		if(lightBumpReadings[0] > 0){
-			driveDirect(-300,-300);
-			sleep(1000);
-			driveDirect(300, 20);
-			sleep(500);
+			driveDirect(-600,-600);
+			sleep(200);
+			driveDirect(360, 20);
+			sleep(400);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[1] > 0){
-			driveDirect(-300,-300);
-			sleep(1000);
-			driveDirect(360, 20);
-			sleep(500);
+			driveDirect(-600,-600);
+			sleep(200);
+			driveDirect(380, 20);
+			sleep(400);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[2] > 0){
-			driveDirect(-300,-300);
-			sleep(1000);
+			driveDirect(-600,-600);
+			sleep(200);
 			driveDirect(400, 20);
-			sleep(500);
+			sleep(400);
 			driveDirect(0, 0);
 	}else if(lightBumpReadings[3] > 0){
-		driveDirect(-300,-300);
-		sleep(1000);
+			driveDirect(-600,-600);
+			sleep(200);
 			driveDirect(20, 400);
-			sleep(500);
+			sleep(400);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[4] > 0){
-			driveDirect(-300,-300);
-			sleep(1000);
-			driveDirect(20, 360);
-			sleep(500);
+			driveDirect(-600,-600);
+			sleep(200);
+			driveDirect(20, 380);
+			sleep(400);
 			driveDirect(0, 0);
 		}else if(lightBumpReadings[5] > 0){
-			driveDirect(-300,-300);
-			sleep(1000);
-			driveDirect(20, 300);
-			sleep(500);
+			driveDirect(-600,-600);
+			sleep(200);
+			driveDirect(20, 360);
+			sleep(400);
 			driveDirect(0, 0);
 		}
-
+		
 		return true;
 	}
 	

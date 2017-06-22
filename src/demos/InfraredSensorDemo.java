@@ -7,7 +7,7 @@ import org.jointheleague.ecolban.rpirobot.IRobotInterface;
 import org.jointheleague.ecolban.rpirobot.SimpleIRobot;
 
 public class InfraredSensorDemo extends IRobotAdapter {
-	Sonar sonar = new Sonar();
+	//Sonar sonar = new Sonar();
 	
 	public InfraredSensorDemo(IRobotInterface iRobot) {
 		super(iRobot);
@@ -33,7 +33,7 @@ public class InfraredSensorDemo extends IRobotAdapter {
 	private boolean loop() throws Exception{
 		//LOOP CODE GOES HERE!!!!!
 		readSensors(100);
-		
+		getInfraredByte();
 		if(getInfraredByteLeft() > 0){
 			driveDirect(100, 200);
 			sleep(100);

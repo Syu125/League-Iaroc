@@ -30,29 +30,27 @@ public class BasicRightWallHugger extends IRobotAdapter {
 		//LOOP CODE GOES HERE!!!!!
 		readSensors(100);
 		//int[] lightBumpReadings = getLightBumps();
-		driveDirect(270, 160);
+		driveDirect(492, 185);
 		//driveDirect(500,350);
 		if(isBumpRight()){
-			driveDirect(-230, 270);
+			driveDirect(-230, 280);
 			sleep(200);
 			
 		}
 		if(isBumpRight( ) && isBumpLeft()){
 			driveDirect(-250,-250);
 			sleep(500);
-			driveDirect(10,80);
-			sleep(1000);
 		}
 		if(isBumpLeft()){
 			  driveDirect(-100,-100);
 			  sleep(500);
-			  driveDirect(-300,300);
-			  sleep(200);
+			  driveDirect(10,100);
+			  sleep(1500);
 		}
 		
 		return true;
 	}
-	
+
 	private void sleep(int amt){
 		try {
 			Thread.sleep(amt);
