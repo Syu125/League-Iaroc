@@ -30,7 +30,7 @@ public class MazeRunnerMazeFace extends IRobotAdapter {
 		//LOOP CODE GOES HERE!!!!!
 		readSensors(100);
 		//int[] lightBumpReadings = getLightBumps();
-		driveDirect(500, 178);
+		driveDirect(500, 188);
 		//driveDirect(500,350);
 		if(isBumpRight()){
 			driveDirect(-230, 280);
